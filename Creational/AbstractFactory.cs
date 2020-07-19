@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.Creational
+﻿namespace DesignPatterns.Creational.AbstractFactory
 {
 	// Creates an instance of several families of classes
 

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DesignPatterns.Creational
+namespace DesignPatterns.Creational.Builder
 {
 	// Separates object construction from its representation
 	// This pattern requires 4 classes: Builder, ConcreteBuilder, Director and Product

@@ -1,4 +1,4 @@
-﻿namespace DesignPatterns.Creational
+﻿namespace DesignPatterns.Creational.Singleton
 {
 	// A class of which only a single instance can exist
 	public class Singleton
