@@ -1,7 +1,7 @@
 ﻿namespace DesignPatterns.Creational
 {
 	// A class of which only a single instance can exist
-	internal class Singleton
+	public class Singleton
 	{
 		// This is the unique instance - only one exists at a time
 		private static Singleton _instance;
