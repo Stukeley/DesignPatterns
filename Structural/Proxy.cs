@@ -1,24 +1,24 @@
 ﻿namespace DesignPatterns.Structural.Proxy
 {
-	// An object representing another object
+	// An object representing another object.
 
-	// Maintains a reference to the original object, controls access to it and can create, delete or modify it
+	// Maintains a reference to the original object, controls access to it and can create, delete or modify it.
 	public class Proxy : Subject
 	{
 		private RealSubject _realSubject;
 
 		public override void Request()
 		{
-			// Check if the object exists first
+			// Check if the object exists first.
 			if (_realSubject is null)
 			{
 				_realSubject = new RealSubject();
 			}
 
-			// Authenticate the request
+			// Authenticate the request.
 			// ...
 
-			// If succeeded, let the request through
+			// If succeeded, let the request through.
 			_realSubject.Request();
 		}
 	}
@@ -32,7 +32,7 @@
 	{
 		public override void Request()
 		{
-			// Do something here
+			// Do something here.
 		}
 	}
 
@@ -42,7 +42,7 @@
 		{
 			var p = new Proxy();
 
-			// Request a service
+			// Request a service.
 			p.Request();
 		}
 	}

@@ -2,9 +2,9 @@
 
 namespace DesignPatterns.Behavioral.Iterator
 {
-	// Sequentially access the elements of a collection
+	// Sequentially access the elements of a collection.
 
-	// Defines an interface for traversing a collection of items
+	// Defines an interface for traversing a collection of items.
 	public interface IIterator
 	{
 		object First { get; }
@@ -13,10 +13,10 @@ namespace DesignPatterns.Behavioral.Iterator
 		object CurrentItem();
 	}
 
-	// Implements the iterator, keeps track of current position inside the collection
+	// Implements the iterator, keeps track of current position inside the collection.
 	public class ConcreteIterator : IIterator
 	{
-		// Collection which we iterate through
+		// Collection which we iterate through.
 		private ConcreteAggregate _aggregate;
 		private int _current = 0;
 
@@ -25,7 +25,7 @@ namespace DesignPatterns.Behavioral.Iterator
 			_aggregate = aggregate;
 		}
 
-		// Get the first object of the sentence
+		// Get the first object of the sentence.
 		public object First
 		{
 			get
@@ -34,7 +34,7 @@ namespace DesignPatterns.Behavioral.Iterator
 			}
 		}
 
-		// Get the next object of the sentence, increment _current so that we can keep track of the current position
+		// Get the next object of the sentence, increment _current so that we can keep track of the current position.
 		public object Next
 		{
 			get
@@ -49,29 +49,29 @@ namespace DesignPatterns.Behavioral.Iterator
 			}
 		}
 
-		// Returns true if the current index is still inside the collection, false otherwise
+		// Returns true if the current index is still inside the collection, false otherwise.
 		public bool IsDone()
 		{
 			return _current >= _aggregate.Count;
 		}
 
-		// Returns the current item
+		// Returns the current item.
 		public object CurrentItem()
 		{
 			return _aggregate[_current];
 		}
 	}
 
-	// Defines the creation of an Iterator object
+	// Defines the creation of an Iterator object.
 	public abstract class Aggregate
 	{
 		public abstract IIterator CreateIterator();
 	}
 
-	// Returns the right ConcreteIterator object and provides the collection to iterate over
+	// Returns the right ConcreteIterator object and provides the collection to iterate over.
 	public class ConcreteAggregate : Aggregate
 	{
-		// This can be any collection that is indexed using []
+		// This can be any collection that is indexed using [].
 		private ArrayList _items = new ArrayList();
 
 		public override IIterator CreateIterator()
@@ -79,7 +79,7 @@ namespace DesignPatterns.Behavioral.Iterator
 			return new ConcreteIterator(this);
 		}
 
-		// Get the collection's count
+		// Get the collection's count.
 		public int Count
 		{
 			get
@@ -88,7 +88,7 @@ namespace DesignPatterns.Behavioral.Iterator
 			}
 		}
 
-		// Indexer
+		// Indexer.
 		public object this[int index]
 		{
 			get
@@ -114,13 +114,13 @@ namespace DesignPatterns.Behavioral.Iterator
 
 			var iterator = a.CreateIterator();
 
-			// Iterate over the collection
+			// Iterate over the collection.
 
 			object item = iterator.First;
 
 			while (item != null)
 			{
-				// Do something
+				// Do something.
 				// ..
 
 				item = iterator.Next;

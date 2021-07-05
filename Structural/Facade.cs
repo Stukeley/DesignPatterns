@@ -1,8 +1,8 @@
 ﻿namespace DesignPatterns.Structural.Facade
 {
-	// A single class that represents an entire subsystem (classes working in a defined, synchronized manner)
+	// A single class that represents an entire subsystem (classes working in a defined, synchronized manner).
 
-	// Facade knows which subsystem classes make a request, and directs them to appropriate subsystem objects
+	// Facade knows which subsystem classes make a request, and directs them to appropriate subsystem objects.
 	public class Facade
 	{
 		private SubsystemOne _one;
@@ -10,7 +10,7 @@
 		private SubsystemThree _three;
 		private SubsystemFour _four;
 
-		// Implement the subsystems
+		// Implement the subsystems.
 		public Facade()
 		{
 			_one = new SubsystemOne();
@@ -19,7 +19,7 @@
 			_four = new SubsystemFour();
 		}
 
-		// Do something with (some of the) subsystems
+		// Do something with (some of the) subsystems.
 		public void MethodA()
 		{
 			_one.MethodOne();
@@ -27,7 +27,7 @@
 			_four.MethodFour();
 		}
 
-		// Do something different
+		// Do something different.
 		public void MethodB()
 		{
 			_two.MethodTwo();
@@ -35,13 +35,13 @@
 		}
 	}
 
-	// Subsystem classes implement functionality and handle the work assigned by Facade (but don't know about its existence)
+	// Subsystem classes implement functionality and handle the work assigned by Facade (but don't know about its existence).
 
 	public class SubsystemOne
 	{
 		public void MethodOne()
 		{
-			// Do something here
+			// Do something here.
 		}
 	}
 
@@ -49,7 +49,7 @@
 	{
 		public void MethodTwo()
 		{
-			// Do something here
+			// Do something here.
 		}
 	}
 
@@ -57,7 +57,7 @@
 	{
 		public void MethodThree()
 		{
-			// Do something here
+			// Do something here.
 		}
 	}
 
@@ -65,7 +65,7 @@
 	{
 		public void MethodFour()
 		{
-			// Do something here
+			// Do something here.
 		}
 	}
 
@@ -73,10 +73,10 @@
 	{
 		public void Create()
 		{
-			// Create only the facade - no need to create subsystem objects, Facade keeps track of them
+			// Create only the facade - no need to create subsystem objects, Facade keeps track of them.
 			var facade = new Facade();
 
-			// Call the methods
+			// Call the methods.
 
 			facade.MethodA();
 			facade.MethodB();

@@ -1,11 +1,11 @@
 ﻿namespace DesignPatterns.Structural.Bridge
 {
-	// Separates an object’s interface from its implementation
+	// Separates an object’s interface from its implementation.
 
-	// Connects with the abstract Implementor
+	// Connects with the abstract Implementor.
 	public class Abstraction
 	{
-		// Limited access
+		// Limited access.
 		public Implementor Implementor { protected get; set; }
 
 		public virtual void Operation()
@@ -14,13 +14,13 @@
 		}
 	}
 
-	// Provides primitive operations for implementation classes
+	// Provides primitive operations for implementation classes.
 	public abstract class Implementor
 	{
 		public abstract void Operation();
 	}
 
-	// Extends Abstraction, including some additional functionality
+	// Extends Abstraction, including some additional functionality.
 	public class RefinedAbstraction : Abstraction
 	{
 		public override void Operation()
@@ -31,7 +31,7 @@
 		}
 	}
 
-	// Defines core operation of the implementor
+	// Defines core operation of the implementor.
 	public class ConcreteImplementorA : Implementor
 	{
 		public override void Operation()
@@ -40,12 +40,12 @@
 		}
 	}
 
-	// Defines a different core operation of the implementor
+	// Defines a different core operation of the implementor.
 	public class ConcreteImplementorB : Implementor
 	{
 		public override void Operation()
 		{
-			// Do something else here
+			// Do something else here.
 		}
 	}
 
@@ -55,11 +55,11 @@
 		{
 			var ab = new RefinedAbstraction();
 
-			// Set initial implementation
+			// Set initial implementation.
 			ab.Implementor = new ConcreteImplementorA();
 			ab.Operation();
 
-			// Replace the implementation with a different one (within the same object)
+			// Replace the implementation with a different one (within the same object).
 			ab.Implementor = new ConcreteImplementorB();
 			ab.Operation();
 		}
